@@ -23,7 +23,7 @@ RUN if [ ${INSTALL_MSSQL} = true ]; then \
   && apk del .php-build-dependencies \
   && rm -rf /var/cache/apk/* \
 ;fi
-
+ENV INSTALL_MSSQL ${INSTALL_MSSQL}
 USER adminer
 
 # We expose Adminer on port 8080 (Adminer's default)
